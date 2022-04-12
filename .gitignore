@@ -1,0 +1,16 @@
+# MethodMonitor
+/MethodMonitor/.gradle/
+/MethodMonitor/.idea/
+/MethodMonitor/.svn/
+/MethodMonitor/java_pid5600.hprof   
+/MethodMonitor/java_pid8156.hprof 
+/MethodMonitor/*.hprof 
+/MethodMonitor/*.iml
+
+#sample
+/MethodMonitor/sample/build/
+/MethodMonitor/sample/*.iml
+
+#methodmonitor
+/MethodMonitor/methodmonitor/build/
+/MethodMonitor/methodmonitor/*.iml
