@@ -1,5 +1,6 @@
 package com.dunn.instrument.methodmonitor.choreographer;
 
+import android.os.Build;
 import android.util.Log;
 import android.view.Choreographer;
 
@@ -10,15 +11,16 @@ public class ChoreographerMonitor {
     private int smResult = 60;
 
     public void start() {
-        Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {
-            @Override
-            public void doFrame(long frameTimeNanos) {
-                Choreographer.getInstance().postFrameCallback(this);
-                // 当前的帧率,如果有掉帧堆栈信息怎么拿？怎么解决掉帧问题
-                // 这次课先不讲
-                plusSM();
-            }
-        });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {
+                @Override
+                public void doFrame(long frameTimeNanos) {
+                    Choreographer.getInstance().postFrameCallback(this);
+                    // 当前的帧率,如果有掉帧堆栈信息怎么拿？怎么解决掉帧问题
+                    plusSM();
+                }
+            });
+        }
     }
 
     /**
