@@ -1,9 +1,9 @@
-# Excel
+# MethodMonitor
 
 
 ## 1.使用
 ```xml
-见ExcelHelp
+
 ```
 ## 2.功能
 ```xml
